@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea {
+      resize: none;
+      
+    }
+  </style>
+</head>
+<body>
+  <textarea  id="first" cols="30"  rows="10"></textarea>
+  <textarea  id="second" cols="30" rows="10"></textarea>
+  <textarea  id="third" cols="30" rows="10"></textarea>
+  <script>
+    
+    const first = document.querySelector("#first");
+    const second = document.querySelector("#second");
+    const third = document.querySelector("#third");
+    const test = document.querySelector("#test");
+    
+    
+    //link event listeners to holders
+    first.addEventListener("keypress",() => saveValue("first",first.value))
+    second.addEventListener("keypress",() => saveValue("second",second.value));
+    third.addEventListener("keypress",() => saveValue("third",third.value));
+    
+    //link onload function to holders
+    first.onload =  useStorage("first",first);
+    second.onload = useStorage("second",second);
+    third.onload = useStorage("third",third);
+    //set cookie
+    function saveValue(name,value) {
+      document.cookie = `${name}=${encodeURIComponent(value)}`
+    }
+    //parse out necessary information from cookie
+    function useStorage(name,obj) {
+      const arrayCookie = document.cookie.split(" ");
+      arrayCookie[arrayCookie.length - 1] = arrayCookie[arrayCookie.length - 1] + ";"
+      const nameAndValue = arrayCookie.filter(elem => elem.startsWith(name))[0];
+      obj.value = nameAndValue.slice(nameAndValue.indexOf("=") + 1, -1);
+      }
+    </script>
+</body>
+</html>

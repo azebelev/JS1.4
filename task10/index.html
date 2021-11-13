@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+div {
+  height: 100%;
+  width: 100%;
+  float: right;
+  background-color:aqua;
+  
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color:blue;
+}
+</style>
+
+<body onmousemove="showPosition()">
+  <div >
+    <p>X:<span id="X"></span><br>Y:<span id="Y"></span></p>
+    
+  </div>
+  <script>
+    const posX = document.getElementById("X");
+    const posY = document.getElementById("Y");
+    
+    showPosition = () => {
+    posX.innerHTML = event.screenX;
+    posY.innerHTML = event.screenY;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background-color:red;
+     height: 50px;
+     width: 50px;
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <button onmouseover="showContent(this)" >over me</button>
+  <div id="asd"></div>
+  <script>
+  showContent = (obj) => {
+   const elem = document.getElementById('asd');
+    elem.style.display = "block";
+    obj.addEventListener("mouseout",() => elem.style.display = "none")
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dis:focus ~ #block{
+      display: none;
+    }
+    .hidden {
+    display:none;
+    }
+  
+  </style>
+</head>
+<body>
+  
+  <button class="dis">make display: none</button>
+  <button onclick="remove()">by removing</button>
+  <button onclick="linkHidden()">by adding class hidden</button>
+  <div id="block" style="height:100px;width: 100px; background-color:black;">
+  </div>
+  
+<script>
+    linkHidden = () => document.getElementById("block").className = "hidden";
+    remove = () => document.getElementById("block").remove(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="type link">
+  <button>click to show picture</button>
+  <img alt="pic">
+
+  <script>
+    const input = document.getElementsByTagName("input")[0];
+    const button = document.getElementsByTagName("button")[0];
+    const img = document.getElementsByTagName("img")[0];
+    
+    button.addEventListener("click",() => img.src = input.value);
+   // img.src ="https://hdwallsource.com/img/2021/3/thumb/computer-motherboard-wallpaper-75166-77878-hd-wallpapers-thumb.jpg";
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  
+    }
+    input.afterChose {
+      top: 0;
+      left: 0;
+      position: absolute;
+      opacity: 0;
+     font-size: 50px;
+    }
+    input:hover {
+      cursor: pointer;
+    }
+    button.afterChose{
+     background-color:aquamarine;
+     border: 3px solid grey;
+     border-radius: 4px;
+     font-weight: bold;
+     font-size: 22px;
+     display: block;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+   button {
+     display:none;
+   }
+  </style>
+</head>
+<body>
+  <div>
+    <button>downloaded</button>
+    <input type="file">
+  </div>
+  
+
+  <script>
+   const input = document.querySelector("input");
+   const button = document.querySelector("button");
+   input.addEventListener("change",() => {
+     input.classList.add("afterChose");
+     button.className="afterChose";
+     console.log("changed");
+   })
+    
+  </script>
+</body>
+</html>

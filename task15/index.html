@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="big" style="height: 400px;width: 400px;background-color:aqua" >
+    <div id="small" style="height: 200px;width: 200px;background-color:blue;">
+
+    </div>
+  </div>
+
+  <script>
+    const big = document.getElementById("big");
+    const small = document.getElementById("small");
+
+    big.addEventListener("click",() => alert("Hello from big"));
+    small.addEventListener("click",(event) => {
+      alert("Hello from small");
+      event.stopPropagation();
+    });
+    
+  </script>
+</body>
+</html>
